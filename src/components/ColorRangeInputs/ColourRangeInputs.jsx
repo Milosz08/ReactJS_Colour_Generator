@@ -10,8 +10,8 @@
  */
 
 import * as React from 'react';
-import { ACTIONS } from '../../store/StoreProvider';
 import THEME from '../../utils/styles';
+import { ACTIONS } from '../../store/taskReducer';
 
 import ColourRangeSingleInput from './ColourRangeSingleInput';
 
