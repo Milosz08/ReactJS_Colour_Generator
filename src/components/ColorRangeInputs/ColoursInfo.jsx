@@ -35,7 +35,7 @@ const ColoursInfo = ({ HEX, callback }) => {
             <InfoColour
                 colourValue = {HEX}
             >
-                Hex: <strong>{callback(HEX, state).h}</strong>
+                Hex: <strong>#{callback(HEX, state).h}</strong>
             </InfoColour>
         </InfoColoursWrapper>
     );

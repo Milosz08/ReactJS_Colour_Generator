@@ -34,17 +34,17 @@ const taskReducer = (state, action) => {
         case SETTING_R:
             return {
                 decC: { ...state.decC, r: action.counter },
-                hexC: { ...state.hexC, r: `#${toHex(action.counter)}` }
+                hexC: { ...state.hexC, r: toHex(action.counter) }
             };
         case SETTING_G:
             return {
                 decC: { ...state.decC, g: action.counter },
-                hexC: { ...state.hexC, g: `#${toHex(action.counter)}` }
+                hexC: { ...state.hexC, g: toHex(action.counter) }
             };
         case SETTING_B:
             return {
                 decC: { ...state.decC, b: action.counter },
-                hexC: { ...state.hexC, b: `#${toHex(action.counter)}` }
+                hexC: { ...state.hexC, b: toHex(action.counter) }
             };
         case RAND_GEN:
             const r = Math.floor(Math.random() * 255);
@@ -52,7 +52,7 @@ const taskReducer = (state, action) => {
             const b = Math.floor(Math.random() * 255);
             return {
                 decC: { r, g, b },
-                hexC: { r: `#${toHex(r)}`, g: `#${toHex(g)}`, b: `#${toHex(b)}` }
+                hexC: { r: toHex(r), g: toHex(g), b: toHex(b) }
             };
         default: throw new Error(`Unexpected task reducer action. Actions: ${action.type} not find!`);
     }
