@@ -16,16 +16,24 @@ const { WHITE_COLOUR, BORDER_RADIUS, TEXT_COLOUR } = THEME;
 
 export const RangeInputsContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
     margin: 50px 0;
 `;
 
 export const RangeInputWrapper = styled.div`
-    width: 100%;
+    width: calc(100% / 3);
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media only screen and (max-width: 637px) {
+        width: 100%;
+        margin: 20px 0;
+        :nth-child(1) {
+            margin-top: 0;
+        }
+    }
 `;
 
 export const InfoLabel = styled.div`

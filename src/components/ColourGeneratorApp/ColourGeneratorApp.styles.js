@@ -33,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
     }
 `;
 
@@ -47,4 +47,8 @@ export const Container = styled.div`
     padding: 30px;
     margin: 0 15px;
     box-shadow: ${BOX_SHADOW};
+    @media only screen and (max-width: 637px) {
+        width: calc(100% - 30px);
+        margin: 15px;
+    }
 `;

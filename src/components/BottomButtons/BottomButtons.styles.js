@@ -19,12 +19,14 @@ const {
 
 export const ButtonsContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
 `;
 
 export const Button = styled.button`
     padding: 10px 14px;
+    margin: 10px 0;
     font-size: 1rem;
     box-shadow: ${BUTTONS_BOX_SHADOW};
     background-color: ${props => props.buttonMode === BUTTON_MODES.LIGHT ? LIGHTGRAY_COLOUR : PURPLE_COLOUR};
@@ -35,5 +37,8 @@ export const Button = styled.button`
     transition: .2s;
     :hover {
         background-color: ${props => props.buttonMode === BUTTON_MODES.LIGHT ? GRAY_TINT_COLOUR : DARK_PURPLE_COLOUR};
+    }
+    @media only screen and (max-width: 637px) {
+        width: 100%;
     }
 `;

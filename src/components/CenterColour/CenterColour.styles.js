@@ -25,6 +25,9 @@ export const CenterColourContainer = styled.div.attrs(props => ({
     margin-bottom: 50px;
     border-radius: ${`${Number(BORDER_RADIUS.substring(0, 1)) * 1.5}px`};
     box-shadow: ${BUTTONS_BOX_SHADOW};
+    @media only screen and (max-width: 637px) {
+        width: 100%;
+    }
 `;
 
 export const RgbInfo = styled.input`
@@ -34,9 +37,16 @@ export const RgbInfo = styled.input`
     outline: none;
     font-size: 2.5rem;
     color: ${props => props.colour};
+    @media only screen and (max-width: 637px) {
+        width: 100%;
+        font-size: 2rem;
+    }
 `;
 
 export const HexInfo = styled(RgbInfo)`
     font-size: 2rem;
     color: ${props => props.colour};
+    @media only screen and (max-width: 637px) {
+        font-size: 1.6rem;
+    }
 `;
