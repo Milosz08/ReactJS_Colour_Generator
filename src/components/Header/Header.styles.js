@@ -12,6 +12,8 @@
 import styled from 'styled-components';
 import THEME from '../../utils/styles';
 
+const { TEXT_COLOUR, PURPLE_COLOUR } = THEME;
+
 export const HeaderContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -23,20 +25,20 @@ export const HeaderContainer = styled.div`
 
 export const HeaderTitle = styled.div`
     text-transform: uppercase;
-    color: ${THEME.TEXT_COLOUR};
+    color: ${TEXT_COLOUR};
 `;
 
 export const HeaderLink = styled.div`
     font-size: 1rem;
     a {
         font-size: 1.5rem;
-        color: ${THEME.TEXT_COLOUR};
+        color: ${TEXT_COLOUR};
     }
 `;
 
 export const LineSeparator = styled.aside`
     width: 100%;
     height: 1px;
-    background-color: ${THEME.MAGENTA_COLOUR};
+    background-color: ${PURPLE_COLOUR};
     margin-top: 15px;
 `;

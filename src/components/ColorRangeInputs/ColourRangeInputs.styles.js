@@ -12,6 +12,8 @@
 import styled from 'styled-components';
 import THEME from '../../utils/styles';
 
+const { WHITE_COLOUR, BORDER_RADIUS, TEXT_COLOUR } = THEME;
+
 export const RangeInputsContainer = styled.div`
     display: flex;
     width: 100%;
@@ -44,7 +46,7 @@ export const RangeInput = styled.input.attrs(props => ({
     ::-webkit-slider-thumb {
         appearance: none;
         background-color: ${props => props.colourValue};
-        border: 5px solid ${THEME.WHITE_COLOUR};
+        border: 5px solid ${WHITE_COLOUR};
         height: 23px;
         width: 23px;
         border-radius: 50%;
@@ -54,7 +56,7 @@ export const RangeInput = styled.input.attrs(props => ({
     ::-webkit-slider-runnable-track {
         height: 3px;
         cursor: pointer;
-        border-radius: ${THEME.BORDER_RADIUS};
+        border-radius: ${BORDER_RADIUS};
     }
     :focus {
         outline: none;
@@ -70,7 +72,7 @@ export const InfoColoursWrapper = styled.div`
 `;
 
 export const InfoColour = styled.div`
-    color: ${THEME.TEXT_COLOUR};
+    color: ${TEXT_COLOUR};
     strong {
         color: ${props => props.colourValue};
     }
