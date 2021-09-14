@@ -13,6 +13,8 @@ import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import THEME from '../../utils/styles';
 
+const { BACKGROUND_GRADIENT, WHITE_COLOUR, BORDER_RADIUS, BOX_SHADOW } = THEME;
+
 export const GlobalStyles = createGlobalStyle`
     *, *::after, *::before {
         margin: 0;
@@ -20,9 +22,11 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         backface-visibility: hidden;
     }
-    body, button {
+    body, button, input {
         font-family: 'Ubuntu', sans-serif;
-        background: ${THEME.BACKGROUND_GRADIENT};
+    }
+    body {
+        background: ${BACKGROUND_GRADIENT};
     }
     #root {
         display: flex;
@@ -38,9 +42,9 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: 1000px;
-    background-color: ${THEME.WHITE_COLOUR};
-    border-radius: ${THEME.BORDER_RADIUS};
+    background-color: ${WHITE_COLOUR};
+    border-radius: ${BORDER_RADIUS};
     padding: 30px;
     margin: 0 15px;
-    box-shadow: ${THEME.BOX_SHADOW};
+    box-shadow: ${BOX_SHADOW};
 `;
