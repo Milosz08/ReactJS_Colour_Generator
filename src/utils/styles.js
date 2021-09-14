@@ -20,9 +20,14 @@ const THEME = {
 
     //Colors
     WHITE_COLOUR: '#ffffff',
-    LIGHTGRAY_COLOUR: '#d0d0d0',
+    BLACK_COLOUR: '#212121',
+    GRAY_COLOUR: '#d0d0d0',
+    LIGHTGRAY_COLOUR: '#f4f5f7',
+    GRAY_TINT_COLOUR: '#ecebeb',
+    DARKGRAY_COLOUR: '#898989',
     TEXT_COLOUR: '#535353',
-    MAGENTA_COLOUR: '#5e72e4',
+    PURPLE_COLOUR: '#5e72e4',
+    DARK_PURPLE_COLOUR: '#4451a8',
     RED_COLOUR: '#7c2121',
     GREEN_COLOUR: '#15581b',
     BLUE_COLOUR: '#0c34b6',
@@ -30,6 +35,14 @@ const THEME = {
     //Misc
     BORDER_RADIUS: '5px',
     BOX_SHADOW: '2px 2px 5px 0 rgba(0, 0, 0, .2)',
+
+    BUTTONS_BOX_SHADOW: 'rgb(50 50 93 / 11%) 0 4px 6px, rgb(0 0 0 / 8%) 0 1px 3px;',
+    MODAL_BOX_SHADOW: 'rgb(0 0 0 / 40%) 0 0 10px 0',
+
+    BUTTON_MODES: {
+        LIGHT: 'light',
+        DARK: 'dark'
+    }
 
 };
 
