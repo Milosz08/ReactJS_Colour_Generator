@@ -46,7 +46,7 @@ const ColourRangeSingleInput = ({ colour, HEX, actionType }) => {
             rgbC: `rgb(${state.decC.r}, ${state.decC.g}, ${state.decC.b})`,
             hexC: `#${state.hexC.r}${state.hexC.g}${state.hexC.b}`,
         });
-    }, [HEX, state, updateGradientBar]);
+    }, [HEX, setColourString, state, updateGradientBar]);
 
     return (
         <RangeInputWrapper>
