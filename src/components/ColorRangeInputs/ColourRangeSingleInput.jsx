@@ -27,12 +27,12 @@ import THEME from '../../utils/styles';
  */
 const ColourRangeSingleInput = ({ colour, HEX, actionType }) => {
 
-    const { state, dispatch } = useContext(StoreContext);
+    const { state, dispatch, setColourString } = useContext(StoreContext);
     const [ sliderBgc, setSliderBgc ] = useState('');
 
     const updateGradientBar = useCallback(valueListener => {
         const percentage = (valueListener - SLIDER_MIN) / (SLIDER_MAX - SLIDER_MIN) * 100;
-        setSliderBgc(`linear-gradient(90deg, ${HEX} ${percentage}%, ${THEME.LIGHTGRAY_COLOUR} ${percentage}%)`);
+        setSliderBgc(`linear-gradient(90deg, ${HEX} ${percentage}%, ${THEME.GRAY_COLOUR} ${percentage}%)`);
     }, [HEX]);
 
     const handleOnChange = ({ target }) => {
@@ -42,6 +42,10 @@ const ColourRangeSingleInput = ({ colour, HEX, actionType }) => {
 
     useEffect(() => {
         updateGradientBar(decAndHexState(HEX, state).d);
+        setColourString({
+            rgbC: `rgb(${state.decC.r}, ${state.decC.g}, ${state.decC.b})`,
+            hexC: `#${state.hexC.r}${state.hexC.g}${state.hexC.b}`,
+        });
     }, [HEX, state, updateGradientBar]);
 
     return (
