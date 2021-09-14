@@ -9,8 +9,12 @@
  * @date 09/14/2021
  */
 
-import React, { createContext, useEffect, useReducer } from 'react';
+import React, { createContext, useEffect, useReducer, useRef, useState } from 'react';
 import taskReducer, { ACTIONS } from './taskReducer';
+
+import { MODAL_TYPE } from '../components/BottomButtons/BottomButtons';
+
+import THEME from '../utils/styles';
 
 /**
  * Create the context of the store. Function exported and used to destructurize context members.
@@ -33,6 +37,13 @@ const StoreProvider = ({ children }) => {
 
     const [ state, dispatch ] = useReducer(taskReducer, coloursObject);
 
+    const [ modal, setModal ] = useState({ ifOpen: false, type: MODAL_TYPE.DEC });
+    const [ colourString, setColourString ] = useState({ rgbC: '', hexC: '' });
+    const [ textColour, setTextColour ] = useState(THEME.BLACK_COLOUR);
+
+    const rgbRef = useRef(null);
+    const hexRef = useRef(null);
+
     const randomGenerator = () => {
         dispatch({ type: ACTIONS.RAND_GEN });
     }
@@ -41,10 +52,24 @@ const StoreProvider = ({ children }) => {
         randomGenerator();
     }, []);
 
+    useEffect(() => {
+        const colorSwitcher = () => {
+            const yiq = ((state.decC.r * 299) + (state.decC.g * 587) + (state.decC.b * 114)) / 1000;
+            const colour = yiq > 140 ? THEME.BLACK_COLOUR : THEME.WHITE_COLOUR;
+            setTextColour(colour);
+        };
+        colorSwitcher();
+    }, [state]);
+
     return (
         <StoreContext.Provider
             value = {{
-                state, dispatch, randomGenerator
+                state, dispatch,
+                modal, setModal,
+                colourString, setColourString,
+                textColour, setTextColour,
+                rgbRef, hexRef,
+                randomGenerator
             }}
         >
             {children}
