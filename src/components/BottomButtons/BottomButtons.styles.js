@@ -35,9 +35,11 @@ export const Button = styled.button`
     border-radius: ${BORDER_RADIUS};
     cursor: pointer;
     transition: .2s;
+
     :hover {
         background-color: ${props => props.buttonMode === BUTTON_MODES.LIGHT ? GRAY_TINT_COLOUR : DARK_PURPLE_COLOUR};
     }
+
     @media only screen and (max-width: 637px) {
         width: 100%;
     }

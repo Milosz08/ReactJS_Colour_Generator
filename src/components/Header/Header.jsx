@@ -26,12 +26,12 @@ const Header = () => (
         <HeaderTitle>Colour Generator</HeaderTitle>
         <HeaderLink>
             <a
-                href = 'https://github.com/Milosz08'
-                target = '_blank'
-                rel = 'noreferrer'
-                title = 'Go to my Github profile'
+                href="https://github.com/Milosz08"
+                target="_blank"
+                rel="noreferrer"
+                title="Go to my Github profile"
             >
-                <FontAwesomeIcon icon = {faGithub}/>
+                <FontAwesomeIcon icon={faGithub}/>
             </a>
         </HeaderLink>
         <LineSeparator/>

@@ -25,18 +25,18 @@ const CenterColour = () => {
 
     return (
         <CenterColourContainer
-            background = {colourString.hexC}
+            background={colourString.hexC}
         >
             <RgbInfo readOnly
-                value = {colourString.rgbC}
-                colour = {textColour}
-                ref = {rgbRef}
+                     value={colourString.rgbC}
+                     colour={textColour}
+                     ref={rgbRef}
             >
             </RgbInfo>
             <HexInfo readOnly
-                value = {colourString.hexC.toLocaleUpperCase()}
-                colour = {textColour}
-                ref = {hexRef}
+                     value={colourString.hexC.toLocaleUpperCase()}
+                     colour={textColour}
+                     ref={hexRef}
             >
             </HexInfo>
         </CenterColourContainer>

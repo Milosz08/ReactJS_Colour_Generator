@@ -51,6 +51,7 @@ export const RangeInput = styled.input.attrs(props => ({
     width: calc(100% - 40px);
     margin: 0 20px;
     appearance: none;
+
     ::-webkit-slider-thumb {
         appearance: none;
         background-color: ${props => props.colourValue};
@@ -61,11 +62,13 @@ export const RangeInput = styled.input.attrs(props => ({
         cursor: pointer;
         margin-top: -10px;
     }
+
     ::-webkit-slider-runnable-track {
         height: 3px;
         cursor: pointer;
         border-radius: ${BORDER_RADIUS};
     }
+
     :focus {
         outline: none;
     }
@@ -81,6 +84,7 @@ export const InfoColoursWrapper = styled.div`
 
 export const InfoColour = styled.div`
     color: ${TEXT_COLOUR};
+
     strong {
         color: ${props => props.colourValue};
     }

@@ -30,7 +30,7 @@ export const ACTIONS = {
  */
 const taskReducer = (state, action) => {
     const { SETTING_R, SETTING_G, SETTING_B, RAND_GEN } = ACTIONS;
-    switch(action.type) {
+    switch (action.type) {
         case SETTING_R:
             return {
                 decC: { ...state.decC, r: action.counter },
@@ -54,7 +54,8 @@ const taskReducer = (state, action) => {
                 decC: { r, g, b },
                 hexC: { r: toHex(r), g: toHex(g), b: toHex(b) }
             };
-        default: throw new Error(`Unexpected task reducer action. Actions: ${action.type} not find!`);
+        default:
+            throw new Error(`Unexpected task reducer action. Actions: ${action.type} not find!`);
     }
 };
 

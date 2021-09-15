@@ -41,11 +41,11 @@ const Modal = () => {
     }
 
     useEffect(() => {
-        if(modal.ifOpen) {
+        if (modal.ifOpen) {
             let currentElement;
-            if(rgbRef !== null && modal.type === MODAL_TYPE.DEC) {
+            if (rgbRef !== null && modal.type === MODAL_TYPE.DEC) {
                 currentElement = rgbRef.current;
-            } else if(hexRef !== null && modal.type === MODAL_TYPE.HEX) {
+            } else if (hexRef !== null && modal.type === MODAL_TYPE.HEX) {
                 currentElement = hexRef.current;
             }
             currentElement.select();
@@ -54,36 +54,36 @@ const Modal = () => {
             setDisplay('flex');
             setTimeout(() => setOpacity('1'), 200);
         }
-    }, [hexRef, modal.ifOpen, modal.type, rgbRef]);
+    }, [ hexRef, modal.ifOpen, modal.type, rgbRef ]);
 
     return (
         <ModalContainer
-            visible = {display}
-            opacity = {opacity}
+            visible={display}
+            opacity={opacity}
         >
             <ModalWrapper
-                opacity = {opacity}
-                translate = {`translateY(${opacity === '1' ? '0' : '10'}px)`}
+                opacity={opacity}
+                translate={`translateY(${opacity === '1' ? '0' : '10'}px)`}
             >
                 <ModalHeader>
                     <div>Colour Detail</div>
                     <CloseButton
-                        onClick = {handleCloseModal}
-                        title = 'Close Modal'
+                        onClick={handleCloseModal}
+                        title="Close Modal"
                     />
                 </ModalHeader>
                 <LineSeparator/>
                 <OuterBase>The following color value has just been copied to the clipboard:</OuterBase>
                 <CenterBase
-                    actualPickColour = {colourString.hexC}
-                    textColour = {textColour}
+                    actualPickColour={colourString.hexC}
+                    textColour={textColour}
                 >
                     {modal.type === MODAL_TYPE.DEC ? colourString.rgbC : colourString.hexC.toLocaleUpperCase()}
                 </CenterBase>
                 <OuterBase>You can put it in CSS file or anywhere you need.</OuterBase>
                 <SecondCloseButton
-                    buttonMode = {LIGHT}
-                    onClick = {handleCloseModal}
+                    buttonMode={LIGHT}
+                    onClick={handleCloseModal}
                 >
                     Close Modal
                 </SecondCloseButton>

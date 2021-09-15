@@ -28,12 +28,12 @@ const ColoursInfo = ({ HEX, callback }) => {
     return (
         <InfoColoursWrapper>
             <InfoColour
-                colourValue = {HEX}
+                colourValue={HEX}
             >
                 Dec: <strong>{callback(HEX, state).d}</strong>
             </InfoColour>
             <InfoColour
-                colourValue = {HEX}
+                colourValue={HEX}
             >
                 Hex: <strong>#{callback(HEX, state).h}</strong>
             </InfoColour>

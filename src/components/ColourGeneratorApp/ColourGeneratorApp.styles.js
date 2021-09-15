@@ -22,12 +22,15 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         backface-visibility: hidden;
     }
+
     body, button, input {
         font-family: 'Ubuntu', sans-serif;
     }
+
     body {
         background: ${BACKGROUND_GRADIENT};
     }
+
     #root {
         display: flex;
         justify-content: center;

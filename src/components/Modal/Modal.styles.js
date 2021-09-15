@@ -56,6 +56,7 @@ export const CloseButton = styled.button`
     cursor: pointer;
     background-color: transparent;
     border: none;
+
     ::after, ::before {
         position: absolute;
         content: '';
@@ -65,6 +66,7 @@ export const CloseButton = styled.button`
         background-color: ${TEXT_COLOUR};
         transform: rotate(45deg);
     }
+
     ::before {
         transform: rotate(-45deg);
     }

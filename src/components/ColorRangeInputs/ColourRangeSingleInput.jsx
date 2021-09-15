@@ -33,7 +33,7 @@ const ColourRangeSingleInput = ({ colour, HEX, actionType }) => {
     const updateGradientBar = useCallback(valueListener => {
         const percentage = (valueListener - SLIDER_MIN) / (SLIDER_MAX - SLIDER_MIN) * 100;
         setSliderBgc(`linear-gradient(90deg, ${HEX} ${percentage}%, ${THEME.GRAY_COLOUR} ${percentage}%)`);
-    }, [HEX]);
+    }, [ HEX ]);
 
     const handleOnChange = ({ target }) => {
         dispatch({ type: actionType, counter: Number(target.value) });
@@ -46,27 +46,27 @@ const ColourRangeSingleInput = ({ colour, HEX, actionType }) => {
             rgbC: `rgb(${state.decC.r}, ${state.decC.g}, ${state.decC.b})`,
             hexC: `#${state.hexC.r}${state.hexC.g}${state.hexC.b}`,
         });
-    }, [HEX, setColourString, state, updateGradientBar]);
+    }, [ HEX, setColourString, state, updateGradientBar ]);
 
     return (
         <RangeInputWrapper>
             <InfoLabel
-                colourValue = {HEX}
+                colourValue={HEX}
             >
                 {colour} Colour ({colour.substring(0, 1)})
             </InfoLabel>
             <RangeInput
-                colourValue = {HEX}
-                bgcValue = {sliderBgc}
-                type = 'range'
-                value = {decAndHexState(HEX, state).d}
-                onChange = {handleOnChange}
-                min = {SLIDER_MIN}
-                max = {SLIDER_MAX}
+                colourValue={HEX}
+                bgcValue={sliderBgc}
+                type="range"
+                value={decAndHexState(HEX, state).d}
+                onChange={handleOnChange}
+                min={SLIDER_MIN}
+                max={SLIDER_MAX}
             />
             <ColoursInfo
-                callback = {decAndHexState}
-                HEX = {HEX}
+                callback={decAndHexState}
+                HEX={HEX}
             />
         </RangeInputWrapper>
     );
@@ -81,11 +81,15 @@ const ColourRangeSingleInput = ({ colour, HEX, actionType }) => {
  * @returns { object } - object with hex and decimal colour value.
  */
 const decAndHexState = (value, state) => {
-    switch(value) {
-        case THEME.RED_COLOUR:      return { d: state.decC.r, h: state.hexC.r };
-        case THEME.GREEN_COLOUR:    return { d: state.decC.g, h: state.hexC.g };
-        case THEME.BLUE_COLOUR:     return { d: state.decC.b, h: state.hexC.b };
-        default:                    throw new Error(`Unexpected HEX color value! Color value: ${value} is not supported`);
+    switch (value) {
+        case THEME.RED_COLOUR:
+            return { d: state.decC.r, h: state.hexC.r };
+        case THEME.GREEN_COLOUR:
+            return { d: state.decC.g, h: state.hexC.g };
+        case THEME.BLUE_COLOUR:
+            return { d: state.decC.b, h: state.hexC.b };
+        default:
+            throw new Error(`Unexpected HEX color value! Color value: ${value} is not supported`);
     }
 }
 

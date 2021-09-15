@@ -11,6 +11,7 @@
 
 import styled from 'styled-components';
 import THEME from '../../utils/styles';
+
 const { BORDER_RADIUS, BUTTONS_BOX_SHADOW } = THEME;
 
 export const CenterColourContainer = styled.div.attrs(props => ({

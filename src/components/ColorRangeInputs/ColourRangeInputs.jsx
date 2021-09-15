@@ -27,19 +27,19 @@ const ColourRangeInputs = () => {
     return (
         <RangeInputsContainer>
             <ColourRangeSingleInput
-                colour = 'red'
-                HEX = {THEME.RED_COLOUR}
-                actionType = {ACTIONS.SETTING_R}
+                colour="red"
+                HEX={THEME.RED_COLOUR}
+                actionType={ACTIONS.SETTING_R}
             />
             <ColourRangeSingleInput
-                colour = 'green'
-                HEX = {THEME.GREEN_COLOUR}
-                actionType = {ACTIONS.SETTING_G}
+                colour="green"
+                HEX={THEME.GREEN_COLOUR}
+                actionType={ACTIONS.SETTING_G}
             />
             <ColourRangeSingleInput
-                colour = 'blue'
-                HEX = {THEME.BLUE_COLOUR}
-                actionType = {ACTIONS.SETTING_B}
+                colour="blue"
+                HEX={THEME.BLUE_COLOUR}
+                actionType={ACTIONS.SETTING_B}
             />
         </RangeInputsContainer>
     );

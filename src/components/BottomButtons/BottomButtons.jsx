@@ -36,20 +36,20 @@ const BottomButtons = () => {
     return (
         <ButtonsContainer>
             <Button
-                buttonMode = {DARK}
-                onClick = {handleRandom}
+                buttonMode={DARK}
+                onClick={handleRandom}
             >
                 Generate Random Colour
             </Button>
             <Button
-                buttonMode = {LIGHT}
-                onClick = {() => handleOpenModal(DEC)}
+                buttonMode={LIGHT}
+                onClick={() => handleOpenModal(DEC)}
             >
                 Copy to Clipboard RGB Colour
             </Button>
             <Button
-                buttonMode = {LIGHT}
-                onClick = {() => handleOpenModal(HEX)}
+                buttonMode={LIGHT}
+                onClick={() => handleOpenModal(HEX)}
             >
                 Copy to Clipboard HEX Colour
             </Button>

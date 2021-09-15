@@ -30,6 +30,7 @@ export const HeaderTitle = styled.div`
 
 export const HeaderLink = styled.div`
     font-size: 1rem;
+
     a {
         font-size: 1.5rem;
         color: ${TEXT_COLOUR};

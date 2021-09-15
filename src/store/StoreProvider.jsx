@@ -20,7 +20,7 @@ import THEME from '../utils/styles';
  * Create the context of the store. Function exported and used to destructurize context members.
  * @type { React.Context<{}> }
  */
-export const StoreContext = createContext({ });
+export const StoreContext = createContext({});
 
 /**
  * Component responsible for generating and delivering application state to all components.
@@ -59,11 +59,11 @@ const StoreProvider = ({ children }) => {
             setTextColour(colour);
         };
         colorSwitcher();
-    }, [state]);
+    }, [ state ]);
 
     return (
         <StoreContext.Provider
-            value = {{
+            value={{
                 state, dispatch,
                 modal, setModal,
                 colourString, setColourString,
